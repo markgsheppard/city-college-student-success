@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>City College Economics: All Opportunities</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#5F259F}a:hover{color:#3C1466}
+*{box-sizing:border-box}
+</style>
+<script src="gate.js"></script>
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div style="background: #1D242C; color: #DDD0F2; font-family: Arial, sans-serif; font-size: 14px; text-align: center; padding: 8px 16px">Design prototype: a proposed Student Success page for the City College Department of Economics. Not an official ccny.cuny.edu page.</div>
+<div style="font-family: 'Open Sans', Arial, sans-serif; color: #1D242C; font-size: 17px; line-height: 1.55; background: #FFFFFF">
+
+<div style="background: #3C1466; color: #FFFFFF; font-size: 14px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 20px">
+<a href="#" style="color: #FFFFFF; text-decoration: none">Request Information</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Visit</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Apply</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Give</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Contact</a>
+</div>
+</div>
+
+<header style="background: #5F259F; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<a href="index.html" style="color: #FFFFFF; text-decoration: none; display: flex; flex-direction: column; line-height: 1.1">
+<span style="font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif; font-size: 30px; font-weight: 700">City College</span>
+<span style="font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #DDD0F2">The City University of New York</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 16px; font-weight: 600">
+<a href="#" style="color: #FFFFFF; text-decoration: none">Academics</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Admissions &amp; Aid</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Student Life</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">About</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Info For</a>
+</nav>
+</div>
+<div style="height: 5px; background: #C9B6E8"></div>
+</header>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 16px 24px 0; font-size: 14px; color: #525D69">
+<a href="#" style="text-decoration: none">Home</a>
+<span aria-hidden="true" style="padding: 0 8px">›</span>
+<a href="#" style="text-decoration: none">Economics</a>
+<span aria-hidden="true" style="padding: 0 8px">›</span>
+<a href="index.html" style="text-decoration: none">Student Success &amp; Graduate Pathways</a>
+<span aria-hidden="true" style="padding: 0 8px">›</span>
+<span>All Opportunities</span>
+</div>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 24px">
+<a href="index.html" style="display: inline-block; margin-bottom: 14px; font-size: 15px; font-weight: 700; text-decoration: none">← Back to Student Success &amp; Graduate Pathways</a>
+<h1 style="margin: 0 0 12px; font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif; font-size: 48px; line-height: 1.1">Internships, Research Assistantships &amp; Programs</h1>
+<p style="margin: 0 0 8px; font-size: 19px; color: #3D4752; max-width: 860px">Internships and first jobs for economics students: think tanks and policy research, Congress and government agencies, the Federal Reserve, university pre-doctoral research, banks and economic consulting, and AEA pipeline programs.</p>
+<p style="margin: 0; font-size: 14px; color: #525D69">Last updated November 12, 2026 · Sources: employer career pages, the #econ_ra feed, congressional offices, the AEA, PREDOC.org and the Federal Reserve. Timing shown is the usual recruiting calendar; always confirm dates on the official posting.</p>
+</section>
+
+<div style="background: #F2F4F7; border-top: 1px solid #DCE1E7; border-bottom: 1px solid #DCE1E7">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 16px">
+<div role="group" aria-label="Filter by category" style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="6">
+<sc-if value="{{ c.active }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ c.pick }}" aria-pressed="true" style="font: inherit; font-size: 15px; font-weight: 700; min-height: 44px; padding: 0 18px; background: #5F259F; color: #FFFFFF; border: 1px solid #5F259F; border-radius: 999px; cursor: pointer">{{ c.label }} ({{ c.count }})</button>
+</sc-if>
+<sc-if value="{{ c.inactive }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ c.pick }}" aria-pressed="false" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 18px; background: #FFFFFF; color: #1D242C; border: 1px solid #9FAAB6; border-radius: 999px; cursor: pointer">{{ c.label }} ({{ c.count }})</button>
+</sc-if>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-end">
+<label for="opp-search" style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 700">Search
+<input id="opp-search" type="search" value="{{ q }}" onChange="{{ onSearch }}" placeholder="Organization, field, city…" style="font: inherit; font-weight: 400; min-height: 44px; padding: 8px 12px; border: 1px solid #9FAAB6; background: #FFFFFF"></label>
+<label for="opp-level" style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 700">Who can apply
+<select id="opp-level" value="{{ level }}" onChange="{{ onLevel }}" style="font: inherit; font-weight: 400; min-height: 44px; padding: 8px 12px; border: 1px solid #9FAAB6; background: #FFFFFF">
+<option value="all">Everyone</option>
+<option value="Undergraduate">Current undergraduates</option>
+<option value="Recent graduate">Recent graduates</option>
+<option value="Graduate">Graduate students</option>
+</select></label>
+<label for="opp-closed" style="display: flex; gap: 10px; align-items: center; min-height: 44px; font-size: 15px; font-weight: 600">
+<input id="opp-closed" type="checkbox" checked="{{ hideClosed }}" onChange="{{ onClosed }}" style="width: 20px; height: 20px">Hide closed postings</label>
+</div>
+</div>
+</div>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 64px">
+<p style="margin: 0 0 18px; font-size: 15px; font-weight: 700; color: #3D4752" aria-live="polite">{{ resultLabel }}</p>
+<sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 32px; background: #F2F4F7; text-align: center">
+<p style="margin: 0 0 12px; font-size: 18px; font-weight: 700">No postings match those filters.</p>
+<button type="button" onClick="{{ reset }}" style="font: inherit; font-weight: 700; min-height: 44px; padding: 0 20px; background: #5F259F; color: #FFFFFF; border: 0; cursor: pointer">Clear filters</button>
+</div>
+</sc-if>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px">
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+<article style="border: 1px solid #DCE1E7; border-top: 5px solid #5F259F; padding: 22px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<sc-if value="{{ it.isOpen }}" hint-placeholder-val="{{ true }}"><span style="font-size: 13px; font-weight: 700; padding: 3px 10px; background: #E3F1E6; color: #1F5130">Open</span></sc-if>
+<sc-if value="{{ it.isRolling }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 700; padding: 3px 10px; background: #E2ECF7; color: #1D4470">Rolling</span></sc-if>
+<sc-if value="{{ it.isUpcoming }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 700; padding: 3px 10px; background: #EFE8FA; color: #2E1052">Check dates</span></sc-if>
+<sc-if value="{{ it.isClosed }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 700; padding: 3px 10px; background: #E8EBEF; color: #3D4752">Closed · next cycle</span></sc-if>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.6px; color: #525D69; text-transform: uppercase">{{ it.cat }}</span>
+</div>
+<h2 style="margin: 0; font-size: 20px; line-height: 1.25">{{ it.title }}</h2>
+<p style="margin: 0; font-size: 16px; font-weight: 600; color: #5F259F">{{ it.org }}</p>
+<dl style="margin: 0; display: grid; grid-template-columns: 96px 1fr; gap: 4px 12px; font-size: 15px">
+<dt style="font-weight: 700; color: #525D69">Deadline</dt><dd style="margin: 0">{{ it.deadline }}</dd>
+<dt style="font-weight: 700; color: #525D69">Who</dt><dd style="margin: 0">{{ it.who }}</dd>
+<dt style="font-weight: 700; color: #525D69">Where</dt><dd style="margin: 0">{{ it.where }}</dd>
+<dt style="font-weight: 700; color: #525D69">Pay</dt><dd style="margin: 0">{{ it.pay }}</dd>
+</dl>
+<div style="margin-top: auto; padding-top: 8px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px">
+<a href="{{ it.url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: #5F259F; color: #FFFFFF; font-weight: 700; text-decoration: none">View posting ↗</a>
+<span style="font-size: 13px; color: #525D69">Found via {{ it.source }}</span>
+</div>
+</article>
+</sc-for>
+</div>
+
+<div style="margin-top: 40px; padding: 24px; background: #F2F4F7; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center">
+<div style="flex: 1 1 520px">
+<strong style="display: block; font-size: 18px">Know of an opportunity we're missing?</strong>
+<span style="font-size: 15px; color: #3D4752">Faculty, alumni and employers can send postings to Ana I. Guerrero in the Economics and Business office (NAC 4/121, 212.650.5230).</span>
+</div>
+<a href="index.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 2px solid #5F259F; font-weight: 700; text-decoration: none">Back to Student Success</a>
+</div>
+</section>
+
+<footer style="background: #1D242C; color: #DCE1E7; font-size: 15px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px">
+<div>
+<p style="margin: 0 0 8px; font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif; font-size: 22px; font-weight: 700; color: #FFFFFF">City College</p>
+<p style="margin: 0">160 Convent Avenue<br>New York, NY 10031<br>212.650.7000</p>
+</div>
+<div>
+<p style="margin: 0 0 8px; font-weight: 700; color: #FFFFFF">Department of Economics</p>
+<p style="margin: 0">Department of Economics and Business<br>North Academic Center, Room 4/121<br>160 Convent Avenue, New York, NY 10031<br>212.650.5230</p>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 18px 24px 32px; border-top: 1px solid #3D4752; font-size: 14px; color: #CBD3DC">Design prototype for the City College Department of Economics</div>
+</footer>
+</div>
+</template>
+<script>
+const OPPS = [
+{title:"Congressional Internship Program (Summer 2027)",org:"Congressional Hispanic Caucus Institute (CHCI)",cat:"Congress & Government",levels:["Undergraduate"],status:"open",deadline:"Dec 1, 2026 (Fall 2027: Mar 1, 2027)",who:"Undergraduates and eligible recent graduates",where:"Washington, DC · May 19 – Jul 30, 2027",pay:"$4,776 stipend, housing and travel",url:"https://chci.org",source:"Congress"},
+{title:"Senator Schumer Internships",org:"Office of U.S. Senator Charles E. Schumer",cat:"Congress & Government",levels:["Undergraduate","Recent graduate"],status:"open",deadline:"Spring: Nov 15 · Summer: Mar 15 · Fall: Jul 15",who:"Best suited to undergraduates",where:"Washington, DC (legislative, press, technical) and NYC + state offices",pay:"Paid for interns who certify financial need",url:"https://www.schumer.senate.gov/services/students/internships",source:"Congress"},
+{title:"Senator Gillibrand Internships",org:"Office of U.S. Senator Kirsten Gillibrand",cat:"Congress & Government",levels:["Undergraduate","Recent graduate"],status:"rolling",deadline:"About six weeks before each session; press is rolling",who:"Current students and recent graduates",where:"Washington, DC; New York City and regional offices",pay:"See office FAQ",url:"https://www.gillibrand.senate.gov/help/internships",source:"Congress"},
+{title:"Congressional Internship Program (Summer 2027)",org:"Congressional Black Caucus Foundation (CBCF)",cat:"Congress & Government",levels:["Undergraduate","Recent graduate"],status:"open",deadline:"See application portal",who:"Rising sophomores, juniors, seniors and recent graduates",where:"Washington, DC · May 24 – Jul 23, 2027",pay:"$3,000 stipend plus housing",url:"https://cbcfinc.academicworks.com/opportunities/410",source:"Congress"},
+{title:"Internship with your U.S. Representative",org:"U.S. House of Representatives",cat:"Congress & Government",levels:["Undergraduate"],status:"upcoming",deadline:"Set by each office",who:"College students",where:"Washington, DC or the district office",pay:"Varies by office",url:"https://www.house.gov/representatives/find-your-representative",source:"Congress"},
+{title:"Edward T. Rogowsky Internship Program in Government & Public Affairs",org:"City University of New York",cat:"Congress & Government",levels:["Undergraduate"],status:"upcoming",deadline:"Apply through your college's faculty liaison",who:"CUNY undergraduates",where:"New York City, Albany and the CUNY Washington, DC summer program",pay:"Stipend; DC program covers housing",url:"https://www.york.cuny.edu/news/edward-t-rogowsky-internship-program-in-government-and-public-affairs",source:"CUNY"},
+{title:"Undergraduate Session Assistants Program",org:"New York State Senate",cat:"Congress & Government",levels:["Undergraduate"],status:"closed",deadline:"Spring 2027 closed in late October · next cycle fall 2027",who:"Juniors and seniors at New York colleges",where:"Albany, NY · January – April",pay:"$8,800 stipend",url:"https://www.nysenate.gov/newsroom/articles/2024/undergraduate-program",source:"NYS Legislature"},
+{title:"Session Internship",org:"New York State Assembly",cat:"Congress & Government",levels:["Undergraduate"],status:"closed",deadline:"Closed Nov 1, 2026 · next cycle fall 2027",who:"College students (through your school's liaison)",where:"Albany, NY · Jan 11 – May 5, 2027",pay:"$8,800 stipend",url:"https://www.assembly.ny.gov/internship/",source:"NYS Legislature"},
+{title:"Budget Policy Internships",org:"Committee for a Responsible Federal Budget",cat:"Congress & Government",levels:["Undergraduate","Graduate","Recent graduate"],status:"rolling",deadline:"Applications accepted year-round",who:"Undergraduate and graduate students",where:"Washington, DC",pay:"See posting",url:"https://www.crfb.org/jobs/internship",source:"Policy"},
+{title:"Economics Student Trainee (Semester of Service)",org:"USDA Economic Research Service",cat:"Congress & Government",levels:["Undergraduate","Graduate"],status:"closed",deadline:"Closed Nov 5, 2026",who:"Students enrolled at least half-time",where:"Remote · 8–20 hrs/week",pay:"Unpaid (volunteer)",url:"https://www.usajobs.gov/job/889896000",source:"#econ_ra"},
+{title:"Summer 2027 Academic Research Internship",org:"Federal Reserve Bank of Richmond",cat:"Federal Reserve",levels:["Undergraduate","Graduate"],status:"open",deadline:"Not listed (apply early)",who:"Students in economics, math, statistics or related fields",where:"Richmond, VA (on site)",pay:"$23.50/hour",url:"https://rb.wd5.myworkdayjobs.com/FRS/job/Richmond-VA/Summer-2027-Academic-Research-Internship_R-0000033215-1",source:"#econ_ra"},
+{title:"Research Assistant Program (2 years)",org:"Federal Reserve Bank of Chicago",cat:"Federal Reserve",levels:["Recent graduate"],status:"open",deadline:"Accepting applications now",who:"Recent BA grads; U.S. citizens or permanent residents",where:"Chicago, IL",pay:"Salaried",url:"https://www.chicagofed.org/research/research-assistant",source:"#econ_ra"},
+{title:"Research Analyst",org:"Federal Reserve Bank of Cleveland",cat:"Federal Reserve",levels:["Recent graduate"],status:"open",deadline:"Hiring typically begins Sept–Oct",who:"BA in economics or related field",where:"Cleveland, OH · usually 2–3 years",pay:"Salaried",url:"https://rb.wd5.myworkdayjobs.com/en-US/FRS/job/Cleveland-OH/Research-Analyst_R-0000033336",source:"#econ_ra"},
+{title:"Research Assistant",org:"Federal Reserve Board of Governors",cat:"Federal Reserve",levels:["Recent graduate"],status:"rolling",deadline:"Reviewed in rounds; see careers page",who:"BA or MA holders; U.S. citizenship required",where:"Washington, DC · 2 years",pay:"Salaried",url:"https://www.federalreserve.gov/careers-research-assistants.htm",source:"Fed"},
+{title:"Junior Summer Analyst — Research",org:"Federal Reserve Bank of New York",cat:"Federal Reserve",levels:["Undergraduate"],status:"closed",deadline:"Summer 2027 closed Oct 5, 2026 · next window Sept 2027",who:"Juniors",where:"New York, NY · 10 weeks",pay:"Paid",url:"https://www.newyorkfed.org/research/careers/research_analysts/index.html",source:"Fed"},
+{title:"Research Analyst Program (2 years)",org:"Federal Reserve Bank of New York",cat:"Federal Reserve",levels:["Recent graduate"],status:"closed",deadline:"2027 window closed Sept 14 · next window late summer 2027",who:"College graduates with strong economics, math and statistics",where:"New York, NY",pay:"Salaried",url:"https://www.newyorkfed.org/research/careers/research_analysts/index.html",source:"Fed"},
+{title:"Research Associate",org:"Federal Reserve Bank of St. Louis",cat:"Federal Reserve",levels:["Recent graduate"],status:"closed",deadline:"Closed Oct 30, 2026",who:"BA in economics with research experience",where:"St. Louis, MO · starts spring/summer 2027",pay:"Salaried",url:"https://econjobmarket.org/positions/12583",source:"EconJobMarket"},
+{title:"All Federal Reserve RA openings",org:"Federal Reserve System (fedeconjobs.org)",cat:"Federal Reserve",levels:["Recent graduate"],status:"rolling",deadline:"Each Reserve Bank recruits separately",who:"Recent graduates",where:"12 Reserve Banks and the Board",pay:"Salaried",url:"https://www.fedeconjobs.org",source:"Fed"},
+{title:"Senior Research Assistant, The Hamilton Project",org:"Brookings Institution",cat:"Predoc & RA",levels:["Recent graduate"],status:"upcoming",deadline:"Check whether the posting is still open",who:"Recent graduates",where:"Washington, DC (hybrid)",pay:"Salaried",url:"https://careers-brookings.icims.com/jobs/3892/senior-research-assistant%2c-the-hamilton-project-%28job-id%3a-2026-3892%29/job",source:"#econ_ra"},
+{title:"Pre-doc: Applied Micro, Health & Public Economics",org:"Georgetown University (Yunan Ji)",cat:"Predoc & RA",levels:["Recent graduate"],status:"rolling",deadline:"Rolling until filled",who:"Recent graduates",where:"Washington, DC",pay:"Salaried",url:"https://www.predoc.org/opportunities",source:"PREDOC.org"},
+{title:"Pre-doc: Environmental Economics & Public Finance",org:"UC Berkeley (Joseph Shapiro & Reed Walker)",cat:"Predoc & RA",levels:["Recent graduate"],status:"rolling",deadline:"Initial review Oct 29, 2026; final deadline Oct 2027",who:"Recent graduates",where:"Berkeley, CA",pay:"Salaried",url:"https://www.predoc.org/opportunities",source:"PREDOC.org"},
+{title:"PREDOC.org pre-doctoral job board",org:"PREDOC.org consortium",cat:"Predoc & RA",levels:["Recent graduate"],status:"rolling",deadline:"New listings weekly",who:"Graduating seniors and recent graduates",where:"Universities and research institutes nationwide",pay:"Salaried",url:"https://www.predoc.org/opportunities",source:"PREDOC.org"},
+{title:"EconTrack job board",org:"American Economic Association",cat:"Predoc & RA",levels:["Recent graduate","Graduate"],status:"rolling",deadline:"Ongoing",who:"Students and early-career economists",where:"Various",pay:"Varies",url:"https://www.aeaweb.org/econtrack",source:"AEA"},
+{title:"AEA Summer Training Program 2027",org:"American Economic Association · hosted at American University",cat:"AEA & Pipeline",levels:["Undergraduate"],status:"open",deadline:"Late January (2026 deadline was Jan 31)",who:"Students with 2+ years of college and strong Ph.D. interest",where:"Washington, DC · May 31 – Jul 23, 2027",pay:"$3,250 stipend, travel, room and board",url:"https://www.aeaweb.org/committees/AEASP/apply/2027",source:"AEA"},
+{title:"AEA Mentoring Program",org:"American Economic Association (CSMGEP)",cat:"AEA & Pipeline",levels:["Undergraduate","Graduate"],status:"upcoming",deadline:"2026 cycle ran Jan 6 – Feb 5",who:"Students from undergraduate through Ph.D.",where:"National; includes a summer pipeline conference",pay:"Program support",url:"https://www.aeaweb.org/about-aea/committees/csmgep/mentoring",source:"AEA"},
+{title:"Expanding Discovery in Economics+ (EDE+)",org:"University of Chicago Booth School of Business",cat:"AEA & Pipeline",levels:["Undergraduate"],status:"upcoming",deadline:"2027 cycle TBA (2026 closed Feb 16)",who:"First- and second-year undergraduates, GPA 3.3+",where:"Chicago and Washington, DC",pay:"Program support",url:"https://www.chicagobooth.edu/expanding-discovery-in-economics",source:"PREDOC.org"},
+{title:"2027 Summer Economics Intern",org:"General Motors",cat:"Banks, consulting & industry",levels:["Graduate"],status:"open",deadline:"Not listed",who:"Master's and Ph.D. students in economics",where:"Warren, MI or Washington, DC (hybrid) · 12 weeks",pay:"Paid; relocation stipend",url:"https://search-careers.gm.com/en/jobs/jr-202619691/2027-summer-intern-general-motors-economics-intern/",source:"#econ_ra"},
+{title:"Research Intern — AI & Human Systems",org:"Microsoft Research",cat:"Banks, consulting & industry",levels:["Graduate"],status:"rolling",deadline:"Rolling until filled",who:"Ph.D. candidates (computational social science, economics)",where:"New York City and Northeast labs",pay:"Paid",url:"https://apply.careers.microsoft.com/careers/job/1970393557056017",source:"#econ_ra"},
+{"title": "Research internships (Economic Studies, Hamilton Project, Tax Policy Center, Metro)", "org": "Brookings Institution", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Graduate", "Recent graduate"], "status": "upcoming", "deadline": "Summer 2027 posts about January 18; closes late February", "who": "Degree-seeking students; some recent graduates", "where": "Washington, DC (hybrid) · about 12 weeks", "pay": "About $18.40/hour", "url": "https://www.brookings.edu/careers/internships/", "source": "the official careers page"},
+{"title": "Research Assistant and Research Analyst", "org": "Brookings Institution", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Posted as roles open, mostly winter and spring", "who": "Graduating seniors and recent graduates with statistics and coding skills", "where": "Washington, DC", "pay": "Salaried", "url": "https://www.brookings.edu/careers/", "source": "the official careers page"},
+{"title": "Research Assistant and Research Analyst", "org": "Urban Institute", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Most entry-level hiring runs fall through spring", "who": "Bachelor's degree; quantitative coursework in economics or statistics", "where": "Washington, DC", "pay": "Salaried", "url": "https://www.urban.org/about/careers", "source": "the official careers page"},
+{"title": "Research Analyst", "org": "Peterson Institute for International Economics", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Posted as roles open", "who": "Recent graduates with strong economics and data skills; a common path to Ph.D. programs", "where": "Washington, DC", "pay": "Salaried", "url": "https://www.piie.com/about/careers", "source": "the official careers page"},
+{"title": "Research Assistant and paid internships", "org": "Economic Policy Institute", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "See careers page", "who": "Students and recent graduates interested in labor markets, wages and inequality", "where": "Washington, DC", "pay": "Paid", "url": "https://www.epi.org/about/jobs/", "source": "the official careers page"},
+{"title": "Internships and Research Assistant roles", "org": "Center on Budget and Policy Priorities", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Graduate", "Recent graduate"], "status": "upcoming", "deadline": "Three terms a year; deadlines months ahead", "who": "Students and recent graduates interested in policies affecting low- and middle-income families", "where": "Washington, DC", "pay": "Paid", "url": "https://www.cbpp.org/careers/intern", "source": "the official careers page"},
+{"title": "Research Assistant and internships", "org": "American Enterprise Institute", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "Internships run fall, spring and summer", "who": "Students and recent graduates; economic policy studies hires research assistants each year", "where": "Washington, DC", "pay": "Paid", "url": "https://www.aei.org/jobs/", "source": "the official careers page"},
+{"title": "Internships", "org": "Cato Institute", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Spring, summer and fall cohorts", "who": "Students and recent graduates", "where": "Washington, DC", "pay": "Paid", "url": "https://www.cato.org/intern", "source": "the official careers page"},
+{"title": "Young Leaders Program internships", "org": "The Heritage Foundation", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Spring, summer and fall cohorts", "who": "Students and recent graduates", "where": "Washington, DC", "pay": "Paid", "url": "https://www.heritage.org/young-leaders-program", "source": "the official careers page"},
+{"title": "Internships", "org": "Center for American Progress", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Graduate"], "status": "upcoming", "deadline": "Spring, summer and fall cohorts", "who": "Undergraduate and graduate students; economic policy team placements", "where": "Washington, DC", "pay": "Paid", "url": "https://www.americanprogress.org/about-us/jobs/internships/", "source": "the official careers page"},
+{"title": "Internships and Research Assistant roles", "org": "Washington Center for Equitable Growth", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "See careers page", "who": "Students and recent graduates interested in inequality and growth", "where": "Washington, DC", "pay": "Paid", "url": "https://equitablegrowth.org/careers/", "source": "the official careers page"},
+{"title": "Internships", "org": "Bipartisan Policy Center", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Graduate"], "status": "upcoming", "deadline": "Spring, summer and fall cohorts", "who": "Undergraduate and graduate students; economic policy program placements", "where": "Washington, DC", "pay": "Paid", "url": "https://bipartisanpolicy.org/careers/", "source": "the official careers page"},
+{"title": "Internships and analyst roles", "org": "Tax Foundation", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "See careers page", "who": "Students and recent graduates interested in tax policy", "where": "Washington, DC", "pay": "Paid", "url": "https://taxfoundation.org/about-us/careers/", "source": "the official careers page"},
+{"title": "Research Analyst and internships", "org": "Resources for the Future", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "Summer internships post in winter", "who": "Students and recent graduates in environmental and energy economics", "where": "Washington, DC", "pay": "Paid", "url": "https://www.rff.org/about/careers/", "source": "the official careers page"},
+{"title": "Research Analyst and Data Analyst", "org": "Mathematica", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall recruiting for the following summer start", "who": "Bachelor's degree with quantitative skills; policy evaluation work", "where": "Princeton, NJ; Washington, DC; other offices", "pay": "Salaried", "url": "https://www.mathematica.org/career-opportunities", "source": "the official careers page"},
+{"title": "Research Assistant", "org": "RAND", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Posted as roles open", "who": "Bachelor's degree with statistics and programming skills", "where": "Several U.S. offices", "pay": "Salaried", "url": "https://www.rand.org/jobs.html", "source": "the official careers page"},
+{"title": "Research Analyst", "org": "W.E. Upjohn Institute for Employment Research", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Posted as roles open", "who": "Recent graduates interested in labor economics research", "where": "Kalamazoo, MI", "pay": "Salaried", "url": "https://www.upjohn.org/about/careers", "source": "the official careers page"},
+{"title": "Research positions with randomized evaluations", "org": "J-PAL and Innovations for Poverty Action", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Rolling; a common application covers many roles", "who": "Recent graduates interested in development economics; U.S. and overseas posts", "where": "Cambridge, MA and field offices worldwide", "pay": "Salaried", "url": "https://www.povertyactionlab.org/careers", "source": "the official careers page"},
+{"title": "Research assistant positions", "org": "National Bureau of Economic Research", "cat": "Think tanks & policy research", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Listings posted through fall and winter", "who": "Recent graduates; NBER lists RA jobs with affiliated researchers nationwide", "where": "Cambridge, MA and universities nationwide", "pay": "Salaried", "url": "https://www.nber.org/career-resources/research-assistant-positions-not-nber", "source": "the official careers page"},
+{"title": "Internships and analyst roles", "org": "Citizens Budget Commission", "cat": "Think tanks & policy research", "levels": ["Undergraduate", "Graduate", "Recent graduate"], "status": "rolling", "deadline": "See careers page", "who": "Students and recent graduates interested in New York City and State budgets", "where": "New York, NY", "pay": "Paid", "url": "https://cbcny.org/careers", "source": "the official careers page"},
+{"title": "Internships and Assistant Analyst roles", "org": "Congressional Budget Office", "cat": "Congress & Government", "levels": ["Graduate", "Recent graduate"], "status": "upcoming", "deadline": "Summer internship postings may close any time after late November", "who": "Summer internships are for graduate students only; recent graduates can apply for assistant analyst jobs", "where": "Washington, DC · 10 weeks", "pay": "Paid", "url": "https://www.cbo.gov/about/careers", "source": "the official careers page"},
+{"title": "Internships and Research Assistant roles", "org": "White House Council of Economic Advisers", "cat": "Congress & Government", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Set each term", "who": "Students for internships; recent graduates for research assistant jobs", "where": "Washington, DC", "pay": "Varies", "url": "https://www.whitehouse.gov/cea/", "source": "the official careers page"},
+{"title": "Internships", "org": "Joint Economic Committee, U.S. Congress", "cat": "Congress & Government", "levels": ["Undergraduate", "Graduate"], "status": "rolling", "deadline": "Fall, spring and summer", "who": "Students interested in economic policy research for Congress", "where": "Washington, DC", "pay": "See committee site", "url": "https://www.jec.senate.gov", "source": "the official careers page"},
+{"title": "Student internships and Pathways programs", "org": "U.S. Department of the Treasury", "cat": "Congress & Government", "levels": ["Undergraduate", "Graduate", "Recent graduate"], "status": "rolling", "deadline": "Posted on USAJOBS, mostly in fall", "who": "Students and recent graduates; U.S. citizenship usually required", "where": "Washington, DC", "pay": "Paid", "url": "https://home.treasury.gov/about/careers-at-treasury", "source": "the official careers page"},
+{"title": "Economist (entry level) and Pathways internships", "org": "Bureau of Labor Statistics", "cat": "Congress & Government", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "Posted on USAJOBS", "who": "Economics majors with required credit hours in economics and statistics", "where": "Washington, DC and regional offices", "pay": "Paid", "url": "https://www.bls.gov/jobs/", "source": "the official careers page"},
+{"title": "Economist and student positions", "org": "Bureau of Economic Analysis", "cat": "Congress & Government", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "Posted on USAJOBS", "who": "Economics majors; BEA produces GDP and the national accounts", "where": "Suitland, MD", "pay": "Paid", "url": "https://www.bea.gov/about/working-bea", "source": "the official careers page"},
+{"title": "Student trainee and analyst positions", "org": "U.S. Government Accountability Office", "cat": "Congress & Government", "levels": ["Undergraduate", "Graduate"], "status": "rolling", "deadline": "Posted on USAJOBS", "who": "Students; paid internships can convert to full-time analyst roles", "where": "Washington, DC and field offices", "pay": "Paid", "url": "https://www.gao.gov/about/careers", "source": "the official careers page"},
+{"title": "Research Analyst (Bureau of Economics) and honors paralegal roles", "org": "Federal Trade Commission", "cat": "Congress & Government", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Usually fall for the following summer", "who": "Recent graduates interested in antitrust and consumer protection economics", "where": "Washington, DC", "pay": "Salaried", "url": "https://www.ftc.gov/about-ftc/careers-ftc", "source": "the official careers page"},
+{"title": "Research Analyst Program", "org": "International Monetary Fund", "cat": "Congress & Government", "levels": ["Recent graduate"], "status": "rolling", "deadline": "See recruitment page", "who": "Recent graduates with strong quantitative and economics training; two-year appointments", "where": "Washington, DC", "pay": "Salaried", "url": "https://www.imf.org/en/About/Recruitment", "source": "the official careers page"},
+{"title": "Junior Professional Associates and internships", "org": "World Bank Group", "cat": "Congress & Government", "levels": ["Recent graduate", "Graduate"], "status": "rolling", "deadline": "Internship windows in fall and winter", "who": "Recent graduates for the associate program; internships require graduate enrollment", "where": "Washington, DC", "pay": "Paid", "url": "https://www.worldbank.org/en/about/careers", "source": "the official careers page"},
+{"title": "Budget and policy analyst roles and internships", "org": "NYC Independent Budget Office", "cat": "Congress & Government", "levels": ["Undergraduate", "Graduate", "Recent graduate"], "status": "rolling", "deadline": "See site", "who": "Students and recent graduates interested in New York City's budget and economy", "where": "New York, NY", "pay": "Paid", "url": "https://www.ibo.nyc.gov", "source": "the official careers page"},
+{"title": "Internships", "org": "NYC Economic Development Corporation", "cat": "Congress & Government", "levels": ["Undergraduate", "Graduate"], "status": "upcoming", "deadline": "Summer postings in winter", "who": "Undergraduate and graduate students", "where": "New York, NY", "pay": "Paid", "url": "https://edc.nyc/careers", "source": "the official careers page"},
+{"title": "Summer internships", "org": "Federal Reserve Board of Governors", "cat": "Federal Reserve", "levels": ["Undergraduate", "Graduate"], "status": "open", "deadline": "Recruiting from October for summer 2027", "who": "Current undergraduate and graduate students", "where": "Washington, DC · 10–12 weeks", "pay": "Paid", "url": "https://www.federalreserve.gov/careers-internships.htm", "source": "the official careers page"},
+{"title": "Predoctoral Research in Economics Program (PREP)", "org": "Becker Friedman Institute, University of Chicago", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates planning a Ph.D.; one to two years of full-time research", "where": "Chicago, IL", "pay": "Salaried", "url": "https://bfi.uchicago.edu", "source": "the official careers page"},
+{"title": "Predoctoral Research Fellows", "org": "Stanford Institute for Economic Policy Research (SIEPR)", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates; includes graduate coursework at Stanford", "where": "Stanford, CA", "pay": "Salaried", "url": "https://siepr.stanford.edu/programs/predoctoral-research-fellowship", "source": "the official careers page"},
+{"title": "Pre-Doctoral Fellows", "org": "Opportunity Insights, Harvard University", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall", "who": "Recent graduates working with large administrative data on economic mobility", "where": "Cambridge, MA", "pay": "Salaried", "url": "https://opportunityinsights.org", "source": "the official careers page"},
+{"title": "Research Associates", "org": "Harvard Business School", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Rolling, mostly fall through spring", "who": "Recent graduates assisting faculty in economics, finance and strategy", "where": "Boston, MA", "pay": "Salaried", "url": "https://www.hbs.edu", "source": "the official careers page"},
+{"title": "Pre-Doctoral Fellows", "org": "Tobin Center for Economic Policy, Yale University", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates; one to two years with Yale economics faculty", "where": "New Haven, CT", "pay": "Salaried", "url": "https://tobin.yale.edu", "source": "the official careers page"},
+{"title": "Research associates and pre-doctoral fellows", "org": "MIT Blueprint Labs", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates working on education, health and workforce research", "where": "Cambridge, MA", "pay": "Salaried", "url": "https://blueprintlabs.mit.edu", "source": "the official careers page"},
+{"title": "Pre-doctoral research positions", "org": "Princeton University Department of Economics", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates working with faculty and research centers", "where": "Princeton, NJ", "pay": "Salaried", "url": "https://economics.princeton.edu", "source": "the official careers page"},
+{"title": "Pre-doctoral research positions", "org": "Columbia University Economics and Columbia Business School", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates; the closest top pre-doc programs to CUNY students", "where": "New York, NY", "pay": "Salaried", "url": "https://econ.columbia.edu", "source": "the official careers page"},
+{"title": "Pre-doctoral research positions", "org": "NYU Stern and the NYU Furman Center", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Posted as roles open", "who": "Recent graduates in finance, economics, housing and urban policy", "where": "New York, NY", "pay": "Salaried", "url": "https://furmancenter.org", "source": "the official careers page"},
+{"title": "Pre-doctoral research positions", "org": "Opportunity Lab, UC Berkeley", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates working on inequality, labor, education and tax policy", "where": "Berkeley, CA", "pay": "Salaried", "url": "https://www.olab.berkeley.edu", "source": "the official careers page"},
+{"title": "Research fellows", "org": "Kellogg School of Management, Northwestern University", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates assisting faculty in economics, finance and strategy", "where": "Evanston, IL", "pay": "Salaried", "url": "https://www.kellogg.northwestern.edu", "source": "the official careers page"},
+{"title": "Pre-doctoral research positions", "org": "The Wharton School, University of Pennsylvania", "cat": "Predoc & RA", "levels": ["Recent graduate"], "status": "rolling", "deadline": "Fall and winter", "who": "Recent graduates assisting faculty in economics, finance and public policy", "where": "Philadelphia, PA", "pay": "Salaried", "url": "https://www.wharton.upenn.edu", "source": "the official careers page"},
+{"title": "Job Openings for Economists (JOE)", "org": "American Economic Association", "cat": "Predoc & RA", "levels": ["Recent graduate", "Graduate"], "status": "rolling", "deadline": "Updated continuously", "who": "The profession's main job board; filter for research assistant and analyst roles", "where": "Nationwide", "pay": "Varies", "url": "https://www.aeaweb.org/joe/listings", "source": "the official careers page"},
+{"title": "Summer Analyst Program (Global Research; Markets)", "org": "JPMorgan Chase", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "upcoming", "deadline": "Opens spring to summer, a year ahead", "who": "Sophomores and juniors; apply about a year before the internship", "where": "New York, NY", "pay": "Paid", "url": "https://careers.jpmorgan.com/us/en/students/programs", "source": "the official careers page"},
+{"title": "Summer Analyst Program (Global Investment Research)", "org": "Goldman Sachs", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "upcoming", "deadline": "Opens in summer, a year ahead", "who": "Sophomores and juniors", "where": "New York, NY", "pay": "Paid", "url": "https://www.goldmansachs.com/careers/students", "source": "the official careers page"},
+{"title": "Summer Analyst Programs (Research; Sales and Trading)", "org": "Morgan Stanley", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "upcoming", "deadline": "Opens spring to summer, a year ahead", "who": "Sophomores and juniors", "where": "New York, NY", "pay": "Paid", "url": "https://www.morganstanley.com/careers/students-graduates", "source": "the official careers page"},
+{"title": "Summer Analyst Programs", "org": "Citi", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "upcoming", "deadline": "Opens in summer, a year ahead", "who": "Sophomores and juniors; includes research and markets tracks", "where": "New York, NY", "pay": "Paid", "url": "https://jobs.citi.com", "source": "the official careers page"},
+{"title": "Summer Analyst Programs (Global Research)", "org": "Bank of America", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "upcoming", "deadline": "Opens in summer, a year ahead", "who": "Sophomores and juniors", "where": "New York, NY", "pay": "Paid", "url": "https://campus.bankofamerica.com", "source": "the official careers page"},
+{"title": "Associate Economist and internships", "org": "Moody's Analytics", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "rolling", "deadline": "Posted as roles open", "who": "Economics graduates for forecasting and regional economics work", "where": "West Chester, PA; New York, NY", "pay": "Salaried", "url": "https://careers.moodys.com", "source": "the official careers page"},
+{"title": "Internships and analyst roles (Bloomberg Economics, data, news)", "org": "Bloomberg", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Summer internships post in fall", "who": "Students and recent graduates", "where": "New York, NY", "pay": "Paid", "url": "https://www.bloomberg.com/company/careers/", "source": "the official careers page"},
+{"title": "Summer Analyst Intern and Analyst", "org": "Analysis Group", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Summer analyst deadline in early fall; full-time analyst in September", "who": "Juniors for the internship; seniors for analyst jobs", "where": "Boston, New York and other offices", "pay": "Summer analysts: $1,900/week", "url": "https://www.analysisgroup.com/careers/", "source": "the official careers page"},
+{"title": "Rise@AG Externship", "org": "Analysis Group", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "upcoming", "deadline": "2027 details posted in late fall; rolling review", "who": "Undergraduates new to economic consulting", "where": "Boston, MA · one week", "pay": "Travel, lodging and meals covered", "url": "https://www.analysisgroup.com/about/diversity-equity-and-inclusion-at-analysis-group/rise-at-ag-externship/", "source": "the official careers page"},
+{"title": "Sophomore Summit", "org": "Cornerstone Research", "cat": "Banks, consulting & industry", "levels": ["Undergraduate"], "status": "open", "deadline": "March 28, 2027", "who": "Sophomores interested in economic consulting", "where": "Virtual · May 26–27, 2027", "pay": "Free program", "url": "https://www.cornerstone.com/Careers/Analyst", "source": "the official careers page"},
+{"title": "Summer Analyst and Analyst", "org": "Cornerstone Research", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "closed", "deadline": "Summer 2027 closed September 27, 2026 · next round about August 2027", "who": "Juniors for the 8-week internship; seniors for analyst jobs", "where": "New York and other offices", "pay": "Paid", "url": "https://www.cornerstone.com/Careers/Analyst", "source": "the official careers page"},
+{"title": "Summer internships and Research Associate", "org": "NERA Economic Consulting", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Internships post January–February 2027", "who": "Juniors for internships; seniors for research associate jobs", "where": "New York and other offices · 10 weeks", "pay": "Paid", "url": "https://www.nera.com/careers.html", "source": "the official careers page"},
+{"title": "Analyst and Associate roles", "org": "Charles River Associates", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Fall recruiting", "who": "Juniors for internships; seniors for analyst jobs", "where": "Boston, New York and other offices", "pay": "Paid", "url": "https://www.crai.com/careers/", "source": "the official careers page"},
+{"title": "Research Analyst", "org": "The Brattle Group", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Fall recruiting", "who": "Juniors for internships; seniors for research analyst jobs", "where": "Boston, New York, Washington, DC", "pay": "Paid", "url": "https://www.brattle.com/careers/", "source": "the official careers page"},
+{"title": "Analyst", "org": "Compass Lexecon", "cat": "Banks, consulting & industry", "levels": ["Recent graduate"], "status": "upcoming", "deadline": "Fall recruiting", "who": "Seniors and recent graduates interested in antitrust economics", "where": "Chicago, New York, Washington, DC", "pay": "Salaried", "url": "https://www.compasslexecon.com/careers/", "source": "the official careers page"},
+{"title": "Consultant and summer internships", "org": "Bates White Economic Consulting", "cat": "Banks, consulting & industry", "levels": ["Undergraduate", "Recent graduate"], "status": "upcoming", "deadline": "Fall recruiting", "who": "Juniors for internships; seniors for consultant jobs", "where": "Washington, DC", "pay": "Paid", "url": "https://www.bateswhite.com/careers.html", "source": "the official careers page"}
+];
+const CATS = ["All", "Think tanks & policy research", "Congress & Government", "Federal Reserve", "Predoc & RA", "Banks, consulting & industry", "AEA & Pipeline"];
+const ORDER = {open:0, rolling:1, upcoming:2, closed:3};
+class Component extends DCLogic {
+  constructor(props){ super(props); this.state = { cat: "All", level: "all", hideClosed: false, q: "" }; }
+  renderVals() {
+    const s = this.state;
+    const q = (s.q || "").toLowerCase().trim();
+    const base = OPPS.filter(o => (s.level === "all" || o.levels.indexOf(s.level) > -1) && (!s.hideClosed || o.status !== "closed") && (!q || (o.title + " " + o.org + " " + o.where + " " + o.who + " " + o.cat).toLowerCase().indexOf(q) > -1));
+    const list = base.filter(o => s.cat === "All" || o.cat === s.cat).slice().sort((a,b) => ORDER[a.status] - ORDER[b.status]);
+    const items = list.map(o => Object.assign({}, o, { isOpen: o.status === "open", isRolling: o.status === "rolling", isUpcoming: o.status === "upcoming", isClosed: o.status === "closed" }));
+    const cats = CATS.map(c => ({ label: c, count: c === "All" ? base.length : base.filter(o => o.cat === c).length, active: s.cat === c, inactive: s.cat !== c, pick: () => this.setState({ cat: c }) }));
+    const n = items.length;
+    return {
+      items, cats, q: s.q, level: s.level, hideClosed: s.hideClosed,
+      empty: n === 0,
+      resultLabel: "Showing " + n + " of " + OPPS.length + " opportunities",
+      onSearch: (e) => this.setState({ q: e.target.value }),
+      onLevel: (e) => this.setState({ level: e.target.value }),
+      onClosed: (e) => this.setState({ hideClosed: e.target.checked }),
+      reset: () => this.setState({ cat: "All", level: "all", hideClosed: false, q: "" })
+    };
+  }
+}
+DCLite.mount(Component);
+</script>
+</body>
+</html>
